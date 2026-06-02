@@ -1,0 +1,304 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Их сургуулийн оюутны тезис  
+% LaTeX Загвар
+% Version 2.3 (25/3/16)
+%
+% Энэ загвар нь дараах сайтаас авсан загварын монгол хувилбар юм.
+% http://www.LaTeXTemplates.com
+
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% Анхдагч загварын эх үүсвэр:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Загварын лиценз:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%-------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%-------------------------------------------------------------------------------
+
+\documentclass[
+11pt, % Баримтын фонтын хэмжээ, сонголт: 10pt, 11pt, 12pt
+oneside, % Хоэр талаар хэвлэж үдэхээр тохируулсан. Нэг тал бол комментыг арилга
+%chapterinoneline,% Нэг мөрөнд бүлгийн дугаар, нэрийг гаргах
+english, % babel багцын хэлний тохиргоо
+singlespacing, % Мөр хоорондын зай. Сонголтууд: singlespacing, onehalfspacing, doublespacing
+%draft, % Ноорог горимд шилжихийн тулд комментыг арилга(зураг, холбоос, hboxes гарахгүй)
+nolistspacing, % Хэрэв мөр хоорондын зай onehalfspacing эсвэл doublespacing бол, жагсаалтын мөр хоорондын зайг single болгохын тулд комментыг арилга
+%liststotoc, % Зураг/хүснэгт/бусад жагсаалтыг гарчигт оруулахын тулд комментыг арилга
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Параграф хооронд зай оруулахын тулд комментыг арилга
+%nohyperref, % hyperref багцыг ачаалахгүй бол комментыг арилга
+headsepline, % Толгой мөрийн доогуур шугам татахын тулд комментыг арилга
+]{MUST-Thesis} % Энэ класс файл нь баримтын бүтцийг тодорхойлно
+
+\usepackage[utf8]{inputenc}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[mongolian, english]{babel}
+
+%-------------------------------------------------------------------------------
+%	МӨРИЙН ТЭГШЛЭЛТИЙН ЗАСВАР
+%   Монгол үгийн таслалтыг идэвхгүй болгож, мөрийн хоорондох
+%   зайны сунгалтаас сэргийлнэ.
+%-------------------------------------------------------------------------------
+\usepackage{microtype}
+\tolerance=5000
+\emergencystretch=3em
+\hyphenpenalty=10000
+\exhyphenpenalty=10000
+%-------------------------------------------------------------------------------
+
+\usepackage{titlesec}
+% Бүлгийн нэрийг "Chapter" → "Бүлэг" болгох (шар бүлгийн хуудас + толгойн мөр)
+\addto\captionsenglish{\renewcommand{\chaptername}{Бүлэг}}
+% Хавсралтын нэрийг "Appendix" → "Хавсралт" болгох (шар хавсралтын хуудас + толгойн мөр)
+\addto\captionsenglish{\renewcommand{\appendixname}{Хавсралт}}
+% Хавсралтын дугаарыг кирилл үсгээр (А, Б, В, ...) гаргах
+\newcommand{\mnAlph}[1]{\ifcase#1\or А\or Б\or В\or Г\or Д\or Е\or Ж\or З\or И\or К\or Л\or М\fi}
+% Олдоогүй зургийн оронд тавих placeholder хүрээ
+\newcommand{\imgph}[1]{\setlength{\fboxsep}{10pt}%
+  \fbox{\begin{minipage}[c][3cm][c]{0.78\textwidth}\centering\itshape\small[\,Энд зураг оруулна: #1\,]\end{minipage}}}
+% Зураг байвал оруулна, байхгүй бол placeholder (appendix_scripts/ script ажилласны дараа автоматаар гарна)
+\newcommand{\figauto}[3][0.8\textwidth]{%
+  \IfFileExists{#2}{\includegraphics[width=#1]{#2}}{\imgph{#3}}}
+\usepackage[table]{xcolor}
+\usepackage{rotating} % эргүүлэх
+\usepackage{multirow}
+
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{colortbl}
+\tcbuselibrary{skins}
+
+\newcolumntype{Y}{>{\raggedleft\arraybackslash}X}
+\newcolumntype{Z}{>{\centering\arraybackslash}X}
+
+\tcbset{tab2/.style={enhanced,fonttitle=\bfseries,fontupper=\footnotesize\rmfamily,
+		colback=white,colframe=black,colbacktitle=white,
+		coltitle=black,center title,sharp corners=all}}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+
+\usepackage{pgf}
+\usepackage{tikz} % зураг зурах
+\usetikzlibrary{shapes,arrows,arrows.meta,automata,positioning,calc,shadows,fit,backgrounds}
+\usepackage{subcaption}
+\usepackage{float}
+
+
+
+\usepackage{pagecolor}
+\definecolor{LigthBlue}{RGB}{102,255,255}
+\definecolor{Beige}{RGB}{255,220,180}
+
+\definecolor{OliveGreen}{cmyk}{0.64,0,0.95,0.40}
+\definecolor{CadetBlue}{cmyk}{0.62,0.57,0.23,0}
+
+\definecolor{lightlightgray}{gray}{0.9}
+\definecolor{Chapter}{RGB}{255,220,180}
+
+% ===== Бүлэг 2-ын схемүүдэд зориулсан нэгдсэн загвар (style) =====
+\definecolor{schInk}{HTML}{1F2A44}
+\definecolor{schBlue}{HTML}{2F6FB0}   \definecolor{schBlueBg}{HTML}{E7F0FA}
+\definecolor{schGreen}{HTML}{2E9E6B}  \definecolor{schGreenBg}{HTML}{E4F5EC}
+\definecolor{schAmber}{HTML}{C9892B}  \definecolor{schAmberBg}{HTML}{FAF0DA}
+\definecolor{schRed}{HTML}{C0533B}    \definecolor{schRedBg}{HTML}{FAE7E2}
+\definecolor{schGray}{HTML}{6B7280}   \definecolor{schGrayBg}{HTML}{EDEFF2}
+\definecolor{schPurple}{HTML}{7A5BC2} \definecolor{schPurpleBg}{HTML}{EEEAFA}
+\tikzset{
+  schbase/.style={rectangle, rounded corners=3pt, draw, line width=0.7pt,
+                  drop shadow={shadow xshift=1.3pt, shadow yshift=-1.3pt, opacity=0.22},
+                  align=center, text=schInk},
+  schblue/.style ={schbase, draw=schBlue,   fill=schBlueBg},
+  schgreen/.style={schbase, draw=schGreen,  fill=schGreenBg},
+  schamber/.style={schbase, draw=schAmber,  fill=schAmberBg},
+  schred/.style  ={schbase, draw=schRed,    fill=schRedBg},
+  schgray/.style ={schbase, draw=schGray,   fill=schGrayBg},
+  schpurple/.style={schbase, draw=schPurple, fill=schPurpleBg},
+  scharr/.style={-{Stealth[length=2.4mm]}, line width=0.9pt, draw=schInk},
+  schskip/.style={-{Stealth[length=2mm]}, dashed, line width=0.9pt, draw=schAmber},
+}
+\usepackage{listings}
+\renewcommand{\lstlistingname}{Эх код} % Програмын эх код хэвлэх
+\lstset{
+language={[x86masm]Assembler},                             % Code langugage  [x86masm]Assembler C VHDL Phyton 
+basicstyle=\ttfamily,                   % Code font
+keywordstyle=\color{OliveGreen},        % Keywords font ('*' = uppercase)
+commentstyle=\color{CadetBlue},         % Comments font
+numbers=left,                           % Line nums position
+numberstyle=\tiny,                      % Line-numbers fonts
+stepnumber=1,                           % Step between two line-numbers
+numbersep=5pt,                          % How far are line-numbers from code
+backgroundcolor=\color{lightlightgray}, % Choose background color
+frame=none,                             % A frame around the code
+tabsize=2,                              % Default tab size
+captionpos=t,                           % Caption-position = bottom
+breaklines=true,                        % Automatic line breaking?
+breakatwhitespace=false,                % Automatic breaks only at whitespace?
+showspaces=false,                       % Dont make spaces visible
+showtabs=false,                         % Dont make tabls visible
+columns=flexible,                       % Column format
+morekeywords={__global__, __device__},  % CUDA specific keywords
+}
+
+\usepackage[autostyle=false]{csquotes} % Ном зүйд хэлнээс хамаарсан хашилт оруулахад хэрэгтэй
+
+\usepackage[backend=bibtex,natbib=true,sorting=none,sortcites]{biblatex} % Ном зүйд bibtex -г ашиглах
+
+\addbibresource{references.bib} % Ном зүйн файл
+
+% MUST-Thesis.cls-д байхгүй командуудыг тодорхойлох
+\newcommand*{\thesistitleeng}[1]{\def\ttitleeng{#1}}
+\newcommand*{\authorcode}[1]{\def\studentcode{#1}}
+\newcommand*{\advisorA}[1]{\def\advicenameA{#1}}
+\newcommand*{\advisorB}[1]{\def\advicenameB{#1}}
+
+\newcommand{\authorshipname}{Зохиогчийн эрх хамгаалал}
+\newcommand{\abbrevname}{Товчилсон үгс}
+\newcommand{\symbolsname}{Таних тэмдэгтүүд}
+\newcommand{\acknowledgementname}{Талархал}
+\newcommand{\abstractname}{Хураангуй}
+\newcommand{\conclusionname}{Дүгнэлт}
+
+\addto\captionsenglish{\renewcommand{\tablename}{Хүснэгт}}
+\addto\captionsenglish{\renewcommand{\figurename}{Зураг}}
+\addto\captionsenglish{\renewcommand{\listfigurename}{Зургийн жагсаалт}}
+\addto\captionsenglish{\renewcommand{\listtablename}{Хүснэгтийн жагсаалт}}
+\addto\captionsenglish{\renewcommand{\contentsname}{Агуулга}}
+\captionsetup[figure]{
+  labelsep=space,
+  justification=raggedright,
+  singlelinecheck=false,
+  font=small
+}
+\newcommand{\figcaption}[2]{%
+  \caption[#1]{#1}%
+}
+ 
+%-------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%-------------------------------------------------------------------------------
+
+\thesistitle{ГҮН СУРГАЛТЫН АРГАД СУУРИЛСАН ЯСНЫ ХУГАРЛЫГ СЕГМЕНТЛЭН АНГИЛЖ ЭДГЭРЭЛТИЙГ ТААМАГЛАХ НЬ} % Таны ажлын нэр, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \ttitle командыг хэрэглэнэ
+% Нүүр хуудсанд гарчгийг тогтсон мөрөөр таслах хувилбар (footer болон PDF metadata-д нөлөөлөхгүй)
+\newcommand{\ttitledisplay}{ГҮН СУРГАЛТЫН АРГАД СУУРИЛСАН\\ЯСНЫ ХУГАРЛЫГ СЕГМЕНТЛЭН АНГИЛЖ \\ ЭДГЭРЭЛТИЙГ ТААМАГЛАХ НЬ}
+\thesistitleeng{BONE FRACTURE SEGMENTATION, CLASSIFICATION AND HEALING TIME PREDICTION BASED ON DEEP LEARNING METHODS} % Таны ажлын нэр, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \ttitleng командыг хэрэглэнэ
+\thesistype{БАКАЛАВРЫН ТӨГСӨЛТИЙН АЖИЛ } % Удирдагчийн нэр, нүүр хуудсанд ашиглана. Дурын газарт бол \thesisname командыг хэрэглэнэ
+\authorshort{Б.Ариунтунгалаг} % Таны товч нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол \shortname командыг хэрэглэнэ 
+\authorlong{БЯМБАЖАВЫН АРИУНТУНГАЛАГ} % Таны бүтэн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол \longname командыг хэрэглэнэ 
+\authorcode{B221960023} % Таны оюутны код, үзлэгийн хуудсанд ашигласан.  Дурын газарт бол \studentcode командыг хэрэглэнэ 
+\addresses{} % Таны хаяг, одоогоор ашиглаагүй. Өөр газарт бол \addressname командыг хэрэглэнэ
+\supervisor{Доктор (Ph.D) дэд профессор Ж.Оргил} % Удирдагчийн нэр, нүүр хуудсанд ашиглана. Дурын газарт бол \supname командыг хэрэглэнэ
+\reader{} % Шүүмжлэгчийн нэр, Дурын газарт бол \readname командыг хэрэглэнэ
+\advisorA{Магистр (M.Sc)Б. Алтантуяа} % Зөвлөгчийн нэр, Дурын газарт бол \advicenameA командыг хэрэглэнэ
+\advisorB{Магистр (M.Sc)Д. Батмөнх} % Зөвлөгчийн нэр, Дурын газарт бол \advicenameB командыг хэрэглэнэ
+\degreeind{061902000000002306} % Мэргэжлийн индекс, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \degreeid командыг хэрэглэнэ
+\degree{ ХИЙМЭЛ ОЮУН} % Боловсролын зэрэг, нүүр болон хураангуй хуудсанд ашигласан. Өөр газарт бол \degreename командыг хэрэглэнэ
+\subject{Компьютерын ухаан} % Таны салбар, одоогоор ашиглаагүй. Дурынр газарт бол \subjectname командыг ашиглана
+\keywords{рентген зураг, ясны хугарал, гүн сургалт, хугарал илрүүлэх, сегментчлэл, хугарлын зэрэг, эдгэрэлтийн таамаглал, ConvNeXt-Base, ResNet50 U-Net} % Түлхүүр үгс, одоогоор ашиглаагүй. Дурын газарт бол \keywordnames командыг хэрэглэнэ
+\department{Компьютерын ухааны тэнхим} % Сургууль/тэнхмийн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол\deptname командыг хэрэглэнэ
+\deptchair{Доктор (Ph.D) дэд профессор А.Хүдэр} % Тэнхим/эрхлэгчийн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол\chairname командыг хэрэглэнэ
+\group{} % Судалгааны баг/тэнхмийн нэр, нүүр хуудсанд ашигласан. Дурын газарт бол \groupname командыг хэрэглэнэ
+\faculty{\href{http://www.sict.edu.mn}{Мэдээлэл, Холбооны Технологийн Сургууль}} % Салбар сургууль/факультетийн нэр, нүүр болон хураангуй хуудсанд ашигласан. Дурын газарт бол \facname командыг ашиглана
+\university{\href{http://www.must.edu.mn}{Шинжлэх Ухаан, Технологийн Их Сургууль}} % Их сургуулийн нэр ба веб хаяг. Дурын газарт бол \univname командыг хэрэглэнэ 
+
+\hypersetup{pdftitle=\ttitle} % Pdf файлын гарчиг
+\hypersetup{pdfauthor=\shortname} % Pdf файлын зохиогчийн нэр
+\hypersetup{pdfkeywords=\keywordnames} % Pdf файлын түлхүүр үгс
+\hypersetup{allcolors=black}
+
+\begin{document}
+
+\frontmatter % Агуулгын өмнөх хуудас дугаарлалт: i, ii, iii, iv... г.м.
+
+\pagestyle{plain} % Тезисийн загварыг дуудах хүртэлх толгой мөрийн суурь загвар
+
+\include{FrontBackMatter/Titlepage} % Нүүр хуудас
+\include{FrontBackMatter/Plan-Review} % Төлөвлөгөө, гүйцэтгэл, шүүмжийн хуудас
+%\include{FrontBackMatter/Quotation} % Ишлэл хуудас
+\include{FrontBackMatter/Declaration} % Мэдэгдлийн хуудас
+\include{FrontBackMatter/Abstract} % Ажлын хураангуй
+\include{FrontBackMatter/Acknowledgments} % Талархлын хуудас
+\include{FrontBackMatter/Abbreviations} % Товчилсон үгс
+%\include{FrontBackMatter/Symbols} % Ашгласан таних тэмдгүүд
+%\include{FrontBackMatter/Dedication} % Ажлыг хэнд зориулсан
+
+%-------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%-------------------------------------------------------------------------------
+
+\tableofcontents % Гарчиг хэвлэх
+\listoffigures % Зургийн жагсаалт хэвлэх
+\listoftables % Хүснэгтийн жагсаалт хэвлэх
+
+%-------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%-------------------------------------------------------------------------------
+
+\mainmatter % Хуудасны тоон (1,2,3...) дугаарлалт эхлэнэ
+
+\pagestyle{thesis} % Хуудасны тогойг "thesis" загвар руу буцаах
+\myformat % Бүлгийн нэрийг тусгай хуудсанд хэвлэх
+
+% Тезисийн бүлгүүдийг Chapters хавтаснаас бие даасан файл байдлаар оруулах
+%\pagecolor{Beige}
+\pretocmd{\chapter}{\pagecolor{Beige}\thispagestyle{plain}}{}{}
+\pretocmd{\section}{\pagecolor{white}}{}{}
+\pretocmd{\subsection}{\pagecolor{white}}{}{}
+\include{Chapters/Chapter1}
+%\pagecolor{Beige}
+\include{Chapters/Chapter2} 
+%\pagecolor{Beige}
+\include{Chapters/Chapter3}
+%\pagecolor{Beige}
+\include{Chapters/Chapter4}
+%\pagecolor{Beige}
+\include{Chapters/Chapter5}
+%\pagecolor{Beige}
+\include{Chapters/Chapter6}  
+
+%\pagecolor{Beige}
+\include{Chapters/Chapter7}  
+\include{Chapters/Conclusion} 
+%\include{Chapters/Chapter5}
+
+%\include{Chapters/bib} 
+
+%-------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%-------------------------------------------------------------------------------
+
+\appendix % Дараах "chapter" нь Хавсралт болохыг LaTeX-д хэлэх
+% Нэг л "Хавсралт" бүлэг (дотроо section-уудтай). Зураг/хүснэгтийг Х.N хэлбэрээр дугаарлана.
+\renewcommand{\thechapter}{}
+\renewcommand{\thesection}{\arabic{section}}
+\renewcommand{\thefigure}{Х.\arabic{figure}}
+\renewcommand{\thetable}{Х.\arabic{table}}
+\pagecolor{white}
+\include{Appendices/Appendix}
+
+%-------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%-------------------------------------------------------------------------------
+\defformat % Бүлгийн нэрийг оргиналь байдлаар хэвлэх
+\patchcmd{\chapter}{\pagecolor{Beige}}{\pagecolor{white}}{}{}
+\pagecolor{white}
+\addchaptertocentry{Ашигласан материалын жагсаалт} % Ашигласан материалыг гарчигт нэмэх
+
+\printbibliography[heading=bibliography,title={Ашигласан материалын жагсаалт}]
+
+%-------------------------------------------------------------------------------
+
+\end{document}

@@ -1,0 +1,16 @@
+--extra-index-url https://download.pytorch.org/whl/cu121
+
+torch
+torchvision
+timm
+albumentations
+imagehash
+tqdm
+pandas
+pillow
+opencv-python
+segmentation-models-pytorch
+scipy
+scikit-image
+
+git+https://github.com/facebookresearch/segment-anything.git

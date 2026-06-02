@@ -1,0 +1,63 @@
+# OS / editor files
+.DS_Store
+._*
+.vscode/
+.idea/
+__pycache__/
+*.py[cod]
+*.swp
+*.tmp
+~$*
+
+# Secrets / local credentials
+*kaggle*.json
+.env
+.env.*
+
+# Datasets and local data dumps
+MURA-v1.1/
+**/datasets/
+**/data/
+**/raw_data/
+**/processed_data/
+
+# Model weights and checkpoints
+*.pt
+*.pth
+*.pkl
+*.ckpt
+*.onnx
+*.tar.gz
+**/checkpoints/
+checkpoint*/
+
+# Logs and experiment outputs
+*.log
+*.out
+*.csv
+*.json
+!package.json
+!tsconfig.json
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.run.xml
+*.toc
+*.synctex.gz
+
+# Generated documents and office files
+*.pdf
+*.docx
+*.pptx
+
+# Keep source images/figures tracked
+!*.png
+!*.jpg
+!*.jpeg

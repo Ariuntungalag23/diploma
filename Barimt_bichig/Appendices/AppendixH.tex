@@ -1,0 +1,53 @@
+% !TEX root = ../main.tex
+% Хавсралт З
+
+\chapter{Туршилтын орчин ба тохиргоо}
+\label{AppendixH}
+\pagecolor{white}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Модуль / туршилт} & \textbf{Орчин} \\ \hline
+    Туршилт 1--2 сургалт & NVIDIA RTX A6000 (48 GB) dedicated server \\ \hline
+    Туршилт 3 ангилал & NVIDIA RTX A6000 (48 GB) dedicated server \\ \hline
+    Туршилт 3 сегментчлэл & Google Colab, NVIDIA T4 GPU \\ \hline
+    Туршилт 3 хугарлын зэрэг, эдгэрэлт & Google Colab, NVIDIA T4 GPU \\ \hline
+    Нэгдсэн inference код & Google Colab, NVIDIA T4 GPU \\ \hline
+    \end{tabular}
+    \caption{Туршилтад ашигласан техник хангамжийн орчин}
+    \label{tab:appH_hw}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Үзүүлэлт} & \textbf{Утга} \\ \hline
+    Python  & 3.x \\ \hline
+    PyTorch & 2.x \\ \hline
+    CUDA    & 12.x \\ \hline
+    OpenCV  & 4.x \\ \hline
+    NumPy   & 2.x \\ \hline
+    Pandas  & 2.x \\ \hline
+    \end{tabular}
+    \caption{Програм хангамж}
+    \label{tab:appH_sw}
+\end{table}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Үзүүлэлт} & \textbf{Утга} \\ \hline
+    Batch Size    & 16 \\ \hline
+    Epochs        & 50 (10 хөлдөөсөн + 40 бүрэн) \\ \hline
+    Optimizer     & AdamW \\ \hline
+    Learning Rate & $1\times10^{-4}$ \\ \hline
+    Image Size    & $512\times512$ \\ \hline
+    Random Seed   & 42 \\ \hline
+    \end{tabular}
+    \caption{Сургалтын үндсэн тохиргоо}
+    \label{tab:appH_train}
+\end{table}
